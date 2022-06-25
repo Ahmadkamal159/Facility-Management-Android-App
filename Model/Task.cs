@@ -1,11 +1,12 @@
-﻿using API.Enums;
+﻿using Facility_Management_App.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
+using TaskStatus = Facility_Management_App.Enums.TaskStatus;
 
-namespace API.Models
+namespace Facility_Management_App.Models
 {
     public class Task
     {
@@ -13,7 +14,7 @@ namespace API.Models
         public int Id { get; set; }
         public TaskType Type { get; set; }
         public string Description { get; set; }
-        public TskStatus Status { get; set; }
+        public TaskStatus Status { get; set; }
         public Priority Priority { get; set; }
         public double Cost { get; set; }
         public DateTime FixingTime { get; set; }

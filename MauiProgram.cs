@@ -1,6 +1,6 @@
 ﻿using Facility_Management_App.Services;
+using Facility_Management_App.View;
 using Facility_Management_App.ViewModel;
-
 namespace Facility_Management_App;
 
 public static class MauiProgram
@@ -15,9 +15,19 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
-		builder.Services.AddSingleton<AppUserServices>();
+		builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
+
+
+		builder.Services.AddSingleton<AppServices>();
         builder.Services.AddSingleton<MainPageViewModel>();
         builder.Services.AddSingleton<MainPage>();
+
+		builder.Services.AddSingleton<TaskServices>();
+        builder.Services.AddSingleton<TaskListViewModel>();
+        builder.Services.AddSingleton<TaskDetails>();
+
+		builder.Services.AddTransient<TaskDetailsViewModel>();
+        builder.Services.AddTransient<TaskDetails>();
         return builder.Build();
 	}
 }

@@ -1,11 +1,11 @@
-﻿using API.Enums;
+﻿using Facility_Management_App.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace API.Models
+namespace Facility_Management_App.Models
 {
     public class AppUser
     {
@@ -20,8 +20,8 @@ namespace API.Models
         public List<SensorWarning> SensorWarnings { get; set; }
 
         public int? BuildingId { get; set; } //new//may may user one to many can be null
-        public Building Building { get; set; }//if we put a FK we will have a error
-        //public int BuildingId { get; set; }//if we put a FK we will have a error
+        public Building Building { get; set; }//if we put a FK we will have an error
+        //public int BuildingId { get; set; }//if we put a FK we will have an error
 
         public List<Incident> Incidents { get; set; }
         ////[InverseProperty("CreatedBy")] //we made this with fluent api look AplicationDBContext 

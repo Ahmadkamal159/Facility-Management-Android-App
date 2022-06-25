@@ -1,4 +1,4 @@
-﻿using API.Enums;
+﻿using Facility_Management_App.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace API.Models
+namespace Facility_Management_App.Models
 {
     public class Sensor
     {

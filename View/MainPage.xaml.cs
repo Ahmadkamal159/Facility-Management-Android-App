@@ -5,14 +5,9 @@ namespace Facility_Management_App;
 public partial class MainPage : ContentPage
 {
 
-	public MainPage(MainPageViewModel mainPageViewModel)
+	public MainPage(MainPageViewModel ViewModel)
 	{
 		InitializeComponent();
-		BindingContext= mainPageViewModel;
-	}
-
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		
+		BindingContext= ViewModel;
 	}
 }
