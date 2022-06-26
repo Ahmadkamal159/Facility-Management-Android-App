@@ -101,10 +101,9 @@ namespace Facility_Management_App.ViewModel
             //    {
             //        userDetails.Type = Enums.UserType.Agent;
             //    }
-
-
             //    string userDetailStr = JsonConvert.SerializeObject(userDetails);
             //}
+
             await Shell.Current.GoToAsync($"//{nameof(TaskList)}");
         }
     }

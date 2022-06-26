@@ -4,6 +4,9 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Facility_Management_App"
+    xmlns:loca="clr-namespace:Facility_Management_App.View"
+    xmlns:loc="clr-namespace:Facility_Management_App.View"
+    
     Shell.FlyoutBehavior="Disabled">
 
     <Shell.Resources>
@@ -22,10 +25,20 @@
             <Style BasedOn="{StaticResource BaseStyle}" TargetType="ShellItem" ApplyToDerivedTypes="True" />
         </ResourceDictionary>
     </Shell.Resources>
-
     <ShellContent
         Title="Facility Management Mobile App"
+        Route="MainPage" 
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        />
+    <ShellContent
+        Title="Task list page"
+        Route="TaskList"
+        ContentTemplate="{DataTemplate loca:TaskList}"
+         />
+    <ShellContent
+        Title="Task Details Page"
+        Route="TaskDetails"
+        ContentTemplate="{DataTemplate loc:TaskDetails}"
+         />
 
 </Shell>

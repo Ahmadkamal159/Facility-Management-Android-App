@@ -4,7 +4,8 @@ namespace Facility_Management_App.View;
 
 public partial class TaskList : ContentPage
 {
-	public TaskList(TaskListViewModel ViewModel)
+	public TaskListViewModel ViewModel { get; set; }
+	public TaskList()
 	{
 		InitializeComponent();
 		BindingContext=ViewModel;
