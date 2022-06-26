@@ -70,6 +70,42 @@ namespace Facility_Management_App.ViewModel
         [ICommand]
         async void Login()
         {
+            if (IsBusy)
+                return;
+
+            try
+            {
+                if (connectivity.NetworkAccess != NetworkAccess.Internet)
+                {
+                    await Shell.Current.DisplayAlert("No connectivity!",
+                        $"Please check internet and try again.", "OK");
+                    return;
+                }
+
+                IsBusy = true;
+                var AppUserss = await appServices.GetAppUsers();
+
+                if (appUsers.Count != 0)
+                    appUsers.Clear();
+
+                foreach (var appUser in AppUserss)
+                    AppUserss.Add(appUser);
+                if (Username == AppUserss.FirstOrDefault().UserName && (Password == AppUserss.FirstOrDefault().PassWord))
+                {
+                    await Shell.Current.GoToAsync($"//{nameof(TaskList)}");
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Unable to LOGIN: {ex.Message}");
+                await Shell.Current.DisplayAlert("Error Username or Password are wrong!", ex.Message, "OK");
+            }
+            finally
+            {
+                IsBusy = false;
+                IsRefreshing = false;
+            }
             //if (!string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(Password))
             //{
             //    var userDetails = new AppUser();
@@ -104,7 +140,6 @@ namespace Facility_Management_App.ViewModel
             //    string userDetailStr = JsonConvert.SerializeObject(userDetails);
             //}
 
-            await Shell.Current.GoToAsync($"//{nameof(TaskList)}");
         }
     }
 }
