@@ -7,6 +7,7 @@
              x:DataType="viewmodel:MainPageViewModel">
 
     <Grid FlyoutItem.IsVisible="True">
+        
         <StackLayout Margin="20">
             <Image Source="index.jpg" HeightRequest="50"  HorizontalOptions="StartAndExpand"/>
 
@@ -40,9 +41,10 @@
 
                 </Grid>
             </StackLayout>
-
-            <Button Margin="0,15" BackgroundColor="{StaticResource SecondaryColor}"
+            
+            <Button Margin="0,15" BackgroundColor="cyan"
                     Text="Sign in" TextColor="{StaticResource PrimaryColor}" FontFamily="OpenSansBold" Command="{Binding LoginCommand}" />
+            
 
             <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
                 <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"

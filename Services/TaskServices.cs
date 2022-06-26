@@ -13,10 +13,9 @@ namespace Facility_Management_App.Services
     {
         List<Task> Tasks = new();
         HttpClient Client;
-        TaskServices()
+        public TaskServices()
         {
-            Client = new HttpClient();
-
+            this.Client = new HttpClient();
         }
         public async Task<List<Task>> GetUserTasks()
         {
