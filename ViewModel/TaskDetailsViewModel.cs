@@ -16,6 +16,6 @@ namespace Facility_Management_App.ViewModel
 
         }
         [ObservableProperty]
-        Facility_Management_App.Models.Task task;
+        Facility_Management_APP.Model.Task task;
     }
 }

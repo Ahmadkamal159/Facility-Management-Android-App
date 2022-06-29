@@ -4,14 +4,14 @@ namespace Facility_Management_App.View;
 
 public partial class TaskList : ContentPage
 {
-	public TaskListViewModel ViewModel { get; set; }
-	public TaskList()
+	
+	public TaskList(TaskListViewModel ViewModel)
 	{
 		InitializeComponent();
 		BindingContext=ViewModel;
 	}
-    protected override void OnNavigatedTo(NavigatedToEventArgs args)
-    {
-        base.OnNavigatedTo(args);
-    }
+    //protected override void OnNavigatedTo(NavigatedToEventArgs args)
+    //{
+    //    base.OnNavigatedTo(args);
+    //}
 }

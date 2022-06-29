@@ -1,4 +1,4 @@
-﻿using Facility_Management_App.Enums;
+﻿using Facility_Management_APP.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Facility_Management_App.Models
+namespace Facility_Management_APP.Model
 {
     public class Sensor
     {
@@ -22,12 +22,8 @@ namespace Facility_Management_App.Models
         public int SpaceId { get; set; }//onDelete: ReferentialAction.NoAction);//we made this (space must migration)//try modelBuilder in AplicationDBContext ClientCascade
         public Space Space { get; set; }
         public List<SensorWarning> SensorWarnings { get; set; }
-
-
         public int? AssetId { get; set; }
         public Asset Asset { get; set; }
         #endregion
-
-
     }
 }

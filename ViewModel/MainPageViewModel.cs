@@ -1,4 +1,4 @@
-﻿using Facility_Management_App.Models;
+﻿using Facility_Management_APP.Model;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Facility_Management_App.Services;
@@ -28,38 +28,38 @@ namespace Facility_Management_App.ViewModel
         }
         [ObservableProperty]
         bool isRefreshing;
-        [ICommand]
-        async Task GetAppUsersAsync()
-        {
-            if (IsBusy)
-                return;
-            try
-            {
-                if (connectivity.NetworkAccess != NetworkAccess.Internet)
-                {
-                    await Shell.Current.DisplayAlert("No connectivity!",
-                        $"Please check internet and try again.", "OK");
-                    return;
-                }
-                IsBusy = true;
-                var users=await appServices.GetAppUsers();
-             if(users.Count != 0)
-                    users.Clear();
-             foreach(var user in users)
-                    users.Add(user);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                await Shell.Current.DisplayAlert("Error",$"unable to reach users{ex.Message}","ok");
+        //[ICommand]
+        //async Task GetAppUsersAsync()
+        //{
+        //    if (IsBusy)
+        //        return;
+        //    try
+        //    {
+        //        if (connectivity.NetworkAccess != NetworkAccess.Internet)
+        //        {
+        //            await Shell.Current.DisplayAlert("No connectivity!",
+        //                $"Please check internet and try again.", "OK");
+        //            return;
+        //        }
+        //        IsBusy = true;
+        //        var users=await appServices.GetAppUsers();
+        //     if(users.Count != 0)
+        //            users.Clear();
+        //     foreach(var user in users)
+        //            users.Add(user);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Debug.WriteLine(ex);
+        //        await Shell.Current.DisplayAlert("Error",$"unable to reach users{ex.Message}","ok");
                  
-            }
-            finally
-            {
-                IsBusy = false;
-                IsRefreshing = false;
-            }
-        }
+        //    }
+        //    finally
+        //    {
+        //        IsBusy = false;
+        //        IsRefreshing = false;
+        //    }
+        //}
         [ObservableProperty]
         private string username;
 
@@ -73,39 +73,39 @@ namespace Facility_Management_App.ViewModel
             if (IsBusy)
                 return;
 
-            try
-            {
-                if (connectivity.NetworkAccess != NetworkAccess.Internet)
-                {
-                    await Shell.Current.DisplayAlert("No connectivity!",
-                        $"Please check internet and try again.", "OK");
-                    return;
-                }
+            ////try
+            ////{
+            ////    if (connectivity.NetworkAccess != NetworkAccess.Internet)
+            ////    {
+            ////        await Shell.Current.DisplayAlert("No connectivity!",
+            ////            $"Please check internet and try again.", "OK");
+            ////        return;
+            ////    }
 
-                IsBusy = true;
-                var AppUserss = await appServices.GetAppUsers();
+            ////    IsBusy = true;
+            ////    var AppUserss = await appServices.GetAppUsers();
 
-                if (appUsers.Count != 0)
-                    appUsers.Clear();
+            ////    if (appUsers.Count != 0)
+            ////        appUsers.Clear();
 
-                foreach (var appUser in AppUserss)
-                    AppUserss.Add(appUser);
-                if (Username == AppUserss.FirstOrDefault().UserName && (Password == AppUserss.FirstOrDefault().PassWord))
-                {
+            ////    foreach (var appUser in AppUserss)
+            ////        AppUserss.Add(appUser);
+            ////    if (Username == AppUserss.FirstOrDefault().UserName && (Password == AppUserss.FirstOrDefault().PassWord))
+            ////    {
                     await Shell.Current.GoToAsync($"//{nameof(TaskList)}");
 
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Unable to LOGIN: {ex.Message}");
-                await Shell.Current.DisplayAlert("Error Username or Password are wrong!", ex.Message, "OK");
-            }
-            finally
-            {
-                IsBusy = false;
-                IsRefreshing = false;
-            }
+            ////    }
+            ////}
+            ////catch (Exception ex)
+            ////{
+            ////    Debug.WriteLine($"Unable to LOGIN: {ex.Message}");
+            ////    await Shell.Current.DisplayAlert("Error Username or Password are wrong!", ex.Message, "OK");
+            ////}
+            ////finally
+            ////{
+            ////    IsBusy = false;
+            ////    IsRefreshing = false;
+            ////}
             //if (!string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(Password))
             //{
             //    var userDetails = new AppUser();
