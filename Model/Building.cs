@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Facility_Management_App.Models
+namespace Facility_Management_APP.Model
 {
     public class Building
     {
@@ -20,7 +20,7 @@ namespace Facility_Management_App.Models
         //[Required]//Review
         public List<Floor> Floors { get; set; }
         
-        public List<AppUser> Users { get; set; }
+        public List<AppUser> AppUsers { get; set; }
         #endregion
     }
 

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Facility_Management_App.Models
+namespace Facility_Management_APP.Model
 {
     public class Floor
     {

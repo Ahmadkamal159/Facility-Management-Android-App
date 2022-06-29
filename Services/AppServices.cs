@@ -1,4 +1,4 @@
-﻿using Facility_Management_App.Models;
+﻿using Facility_Management_APP.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using Task = Facility_Management_App.Models.Task;
+using Task = Facility_Management_APP.Model.Task;
 
 namespace Facility_Management_App.Services
 {

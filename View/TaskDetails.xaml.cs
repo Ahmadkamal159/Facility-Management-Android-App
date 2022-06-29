@@ -5,8 +5,11 @@ public partial class TaskDetails : ContentPage
 {
 	public TaskDetails(TaskDetailsViewModel viewmodel)
 	{
-
 		InitializeComponent();
 		BindingContext= viewmodel;
+	}
+	protected override void OnNavigatedTo(NavigatedToEventArgs args)
+	{
+		base.OnNavigatedTo(args);
 	}
 }
