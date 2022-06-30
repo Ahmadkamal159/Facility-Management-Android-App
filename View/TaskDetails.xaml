@@ -13,7 +13,7 @@
                         Background="{StaticResource Primary}"
                         HeightRequest="160"
                         HorizontalOptions="FillAndExpand" />
-                <!--<Frame
+                <Frame
                         Grid.RowSpan="2"
                         Grid.Column="1"
                         Margin="0,80,0,0"
@@ -23,22 +23,22 @@
                         Padding="0"
                         IsClippedToBounds="True"
                         CornerRadius="80">
-                </Frame>-->
+                </Frame>
             </Grid>
             <VerticalStackLayout Padding="10" Spacing="10">
-                <Label Style="{StaticResource MediumLabel}" Text="{Binding Task.Id,StringFormat='TaskId:{0}'}" />
-                <Label Style="{StaticResource MicroLabel}" Text="{Binding Task.CreatedById, StringFormat='CreatedById: {0}'}" />
-                <Label Style="{StaticResource MicroLabel}" Text="{Binding Task.AssignedById, StringFormat='AssignedById: {0}'}" />
-                <Label Style="{StaticResource MicroLabel}" Text="{Binding Task.AssignedBy.FirstName , StringFormat='AssignedByName: {0}'}" />
-                <Label Style="{StaticResource MicroLabel}" Text="{Binding Task.AssignedToId, StringFormat='AssignedToId: {0}'}" />
-                <Label Style="{StaticResource MicroLabel}" Text="{Binding Task.AssignedTo.FirstName, StringFormat='AssignedToName: {0}'}" />
-                <Label Style="{StaticResource MicroLabel}" Text="{Binding Task.Description, StringFormat='Description: {0}'}" />
-                <Label Style="{StaticResource MicroLabel}" Text="{Binding Task.Cost, StringFormat='Cost: {0}'}" />
-                <Label Style="{StaticResource MicroLabel}" Text="{Binding Task.FixingTime, StringFormat='FixingTime: {0}'}" />
-                <Label Style="{StaticResource MicroLabel}" Text="{Binding Task.IncidentId, StringFormat='IncidentId: {0}'}" />
-                <Label Style="{StaticResource MicroLabel}" Text="{Binding Task.Priority, StringFormat='Priority: {0}'}" />
-                <Label Style="{StaticResource MicroLabel}" Text="{Binding Task.Status, StringFormat='Status: {0}'}" />
-                <Label Style="{StaticResource MicroLabel}" Text="{Binding Task.Type, StringFormat='Type: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.Id,StringFormat='TaskId:{0}'}" />
+                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.CreatedById, StringFormat='CreatedById: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.AssignedById, StringFormat='AssignedById: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.AssignedBy.FirstName , StringFormat='AssignedByName: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.AssignedToId, StringFormat='AssignedToId: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.AssignedTo.FirstName, StringFormat='AssignedToName: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.Description, StringFormat='Description: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.Cost, StringFormat='Cost: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.FixingTime, StringFormat='FixingTime: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.IncidentId, StringFormat='IncidentId: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.Priority, StringFormat='Priority: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.Status, StringFormat='Status: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.Type, StringFormat='Type: {0}'}" />
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
