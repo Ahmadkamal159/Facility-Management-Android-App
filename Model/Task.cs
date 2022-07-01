@@ -1,12 +1,11 @@
-﻿using Facility_Management_App.Enums;
+﻿using Facility_Management_APP.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using TaskStatus = Facility_Management_App.Enums.TaskStatus;
 
-namespace Facility_Management_App.Models
+namespace Facility_Management_APP.Model
 {
     public class Task
     {
@@ -14,10 +13,15 @@ namespace Facility_Management_App.Models
         public int Id { get; set; }
         public TaskType Type { get; set; }
         public string Description { get; set; }
-        public TaskStatus Status { get; set; }
+        public Enums.TaskStatus Status { get; set; }
         public Priority Priority { get; set; }
         public double? Cost { get; set; }
         public DateTime? FixingTime { get; set; }
+<<<<<<< HEAD
+=======
+        public string Comment { get; set; }
+
+>>>>>>> 2d393b7f8297d548c24599827089e5a9f8170f3f
         #endregion
 
         #region Link with other
@@ -31,6 +35,8 @@ namespace Facility_Management_App.Models
         public AppUser AssignedTo { get; set; }
         public int? AssignedById { get; set; }//new//need to be tested in api to make sure it add in the list
         public AppUser AssignedBy { get; set; }
+
+       
         #endregion
     }
 }

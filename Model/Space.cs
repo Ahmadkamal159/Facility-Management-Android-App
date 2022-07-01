@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Facility_Management_App.Models
+namespace Facility_Management_APP.Model
 {
     public class Space
     {
@@ -22,7 +22,6 @@ namespace Facility_Management_App.Models
         //Space has many assets 
         public List<Asset> Assets { get; set; }
         //Space has many Sensors
-
         public List<Sensor> Sensors { get; set; }
 
         #endregion

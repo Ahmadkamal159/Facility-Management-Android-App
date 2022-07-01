@@ -15,12 +15,13 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+		
 		builder.Services.AddSingleton<IConnectivity>(Connectivity.Current);
 
 
-		builder.Services.AddSingleton<AppServices>();
-        builder.Services.AddSingleton<MainPageViewModel>();
-        builder.Services.AddSingleton<MainPage>();
+		builder.Services.AddSingleton<AppServices>();//sevices
+        builder.Services.AddSingleton<MainPageViewModel>();//viewmodel
+        builder.Services.AddSingleton<MainPage>();//view
 
 		builder.Services.AddSingleton<TaskServices>();
         builder.Services.AddSingleton<TaskListViewModel>();
@@ -31,3 +32,4 @@ public static class MauiProgram
         return builder.Build();
 	}
 }
+//comment

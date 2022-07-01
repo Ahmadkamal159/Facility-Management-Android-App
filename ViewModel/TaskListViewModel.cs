@@ -13,10 +13,10 @@ using System.Threading.Tasks;
 
 namespace Facility_Management_App.ViewModel
 {
-    [QueryProperty(nameof(Task),"Task")]
+    [QueryProperty(nameof(Facility_Management_APP.Model.Task),"Task")]
     public partial class TaskListViewModel:BaseViewModel
     {
-        public ObservableCollection<Task> Tasks { get; } = new();
+        public ObservableCollection<Facility_Management_APP.Model.Task> Tasks { get; } = new();
         TaskServices TaskService;
         IConnectivity connectivity;
         
@@ -69,7 +69,7 @@ namespace Facility_Management_App.ViewModel
         }
 
         [ICommand]
-        async Task GoToTaskDetails(Facility_Management_App.Models.Task task)
+        async Task GoToTaskDetails(Facility_Management_APP.Model.Task task)
         {
             if (task is null)
                 return;

@@ -54,9 +54,15 @@
 
 	<ItemGroup>
 	<PackageReference Include="communitytoolkit.Mvvm" versionVersion="8.0.0-preview1" Version="8.0.0-preview1" />
+<<<<<<< HEAD
 	<PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.0-preview3.22168.1" />
 	<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
 	<PackageReference Include="System.Data.SqlClient" Version="4.8.0-preview3.19551.4" />
+=======
+	<PackageReference Include="Json.Net" Version="1.0.33" />
+	<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	<PackageReference Include="System.Text.Json" Version="7.0.0-preview.5.22301.12" />
+>>>>>>> 2d393b7f8297d548c24599827089e5a9f8170f3f
 	</ItemGroup>
 
 	<ItemGroup>
