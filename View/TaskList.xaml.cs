@@ -10,8 +10,4 @@ public partial class TaskList : ContentPage
 		InitializeComponent();
 		BindingContext=ViewModel;
 	}
-    //protected override void OnNavigatedTo(NavigatedToEventArgs args)
-    //{
-    //    base.OnNavigatedTo(args);
-    //}
 }
