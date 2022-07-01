@@ -13,7 +13,6 @@ namespace Facility_Management_App.Services
     public class AppServices
     {
         List<AppUser> Users = new();
-        //List<Task> Tasks = new();
         HttpClient Client;
         
         public AppServices()

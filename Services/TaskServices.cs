@@ -26,8 +26,7 @@ namespace Facility_Management_App.Services
         {
             if (Tasks?.Count > 0)
                 return Tasks;
-            //          Client.DefaultRequestHeaders.Accept
-            //.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+           
             var response = await Client.GetAsync("http://41.43.116.139:5050/taskpages/senttaskstomobapp1"); //returns u the response of the server's verb
             if (response.IsSuccessStatusCode)
             {
