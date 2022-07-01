@@ -4,57 +4,41 @@
              x:Class="Facility_Management_App.MainPage"
              xmlns:viewmodel="clr-namespace:Facility_Management_App.ViewModel"
              Title="Login"
-             x:DataType="viewmodel:MainPageViewModel">
+             x:DataType="viewmodel:MainPageViewModel"
+             BackgroundImageSource="BackGround.png">
+    <Grid FlyoutItem.IsVisible="False">
 
-    <Grid FlyoutItem.IsVisible="True">
-        
         <StackLayout Margin="20">
-            <Image Source="index.jpg" HeightRequest="50"  HorizontalOptions="StartAndExpand"/>
+            <Image  Source="logo.png" HeightRequest="100"  HorizontalOptions="Fill"  Aspect="AspectFill"/>
 
-            <StackLayout Margin="0,80">
+            <StackLayout>
                 <Label Style="{StaticResource LargeLabel}" FontSize="32" Text="Welcome to ITI"/>
                 <Label Style="{StaticResource LargeLabel}" FontSize="28" Text="Facility Management Client App"/>
                 <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}" 
                        FontSize="16" Text="Please Sign in"/>
             </StackLayout>
-            
-            <StackLayout>
-                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}" 
-                       FontSize="16" Text="Username"/>
-                <Grid Margin="0,5">
-                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5"/>
-                    <Image Source="user.png" HeightRequest="20" WidthRequest="20" />
-                    <Entry  BackgroundColor="Transparent" Placeholder="Enter username" 
-                           TextColor="White" Margin="5,0" Text="{Binding Username,Mode=OneWay}"
-                           PlaceholderColor="Gray" />
 
-                </Grid>
-
-                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}" 
-                       FontSize="16" Text="Password"/>
-                <Grid Margin="0,5">
-                    <Frame Opacity="0.3" BackgroundColor="White" CornerRadius="5"/>
-                    <Image Source="lock.png" HeightRequest="20" WidthRequest="20" />
-                    <Entry BackgroundColor="Transparent" Placeholder="Enter password" 
-                           TextColor="White" Margin="5,0"
-                           PlaceholderColor="Gray" Text="{Binding Password}" IsPassword="True"/>
-
-                </Grid>
+            <StackLayout  >
+                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}" FontSize="16" Text="Username" Grid.Column="0" Grid.Row="2"/>
+                <!--<Image Source="user.png" HeightRequest="20" WidthRequest="20" Grid.Column="1" Grid.Row="2"  />-->
+                
+                <Entry  BackgroundColor="White"  Placeholder="Enter username"
+                           TextColor="Black" Margin="5,0" Text="{Binding Username}"
+                           PlaceholderColor="Gray" Keyboard="Text" Visual="Default" IsVisible="true" />
             </StackLayout>
-            
-            <Button Margin="0,15" BackgroundColor="cyan"
-                    Text="Sign in" TextColor="{StaticResource PrimaryColor}" FontFamily="OpenSansBold" Command="{Binding LoginCommand}" />
-            
+            <StackLayout  >
+                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}" 
+                           FontSize="16" Text="Password"/>
 
-            <StackLayout VerticalOptions="FillAndExpand" Orientation="Horizontal">
-                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
-                       FontSize="16" Text="Forgot Password?" VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand"
-                       />
-                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}"
-                       FontSize="16" Text="more details.."  VerticalOptions="EndAndExpand"
-                       HorizontalOptions="EndAndExpand"
-                       />
+                <!--<Image Source="lock.png" HeightRequest="20" WidthRequest="20" Grid.Column="1" Grid.Row="3"  />-->
+                <Entry BackgroundColor="White" Placeholder="Enter password" 
+                               TextColor="Black" Margin="5,0"
+                               PlaceholderColor="Gray" Text="{Binding Password}" IsPassword="True"
+                                Keyboard="Text" Visual="Default" IsVisible="true"/>
             </StackLayout>
+
+            <Button Margin="0,15"
+                    Text="Sign in" BackgroundColor="Gray" BorderColor="White" FontFamily="OpenSansBold" Command="{Binding LoginCommand}"/>
         </StackLayout>
     </Grid>
 </ContentPage>

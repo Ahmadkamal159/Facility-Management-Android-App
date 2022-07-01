@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
 using System.Text.Json;
+using Newtonsoft.Json;
 using System.Threading.Tasks;
 using Task = Facility_Management_App.Models.Task;
 
@@ -23,10 +24,13 @@ namespace Facility_Management_App.Services
             if (Tasks?.Count > 0)
                 return Tasks;
 
-            var response = await Client.GetAsync("Write the http verb's url here"); //returns u the response of the server's verb
+            var response = await Client.GetAsync("http://41.43.116.139:5050/taskpages/senttaskstomobapp1"); //returns u the response of the server's verb
+            
             if (response.IsSuccessStatusCode)
             {
-                Tasks = await response.Content.ReadFromJsonAsync<List<Task>>();//reads the return fro the servers and translates it to the punch of ur tasks
+                //var x = await response.Content.ReadFromJsonAsync<List<Task>>();//reads the return fro the servers and translates it to the punch of ur tasks
+                //Tasks = x;
+                Tasks = JsonConvert.DeserializeObject<List<Task>>(await response.Content.ReadAsStringAsync());
             }
             //use this punch of code when ur offline
             //using var stream = await FileSystem.OpenAppPackageFileAsync("TaskData.json");

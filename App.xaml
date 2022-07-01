@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Facility_Management_App"
              x:Class="Facility_Management_App.App">
+   
     <Application.Resources>
         <ResourceDictionary>
             <Color x:Key="Primary">#00BFFF</Color>
@@ -18,7 +19,7 @@
 
             <Style ApplyToDerivedTypes="True" TargetType="NavigationPage">
                 <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}" />
-                <Setter Property="BarBackgroundColor" Value="Aqua" />
+                <Setter Property="BarBackgroundColor" Value="Gray" />
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
 
@@ -41,6 +42,7 @@
 
             <Style x:Key="LargeLabel" BasedOn="{StaticResource BaseLabel}" TargetType="Label">
                 <Setter Property="FontSize" Value="20"/>
+                <Setter Property="TextColor" Value="Grey" />
             </Style>
 
             <Style ApplyToDerivedTypes="True" TargetType="RefreshView">

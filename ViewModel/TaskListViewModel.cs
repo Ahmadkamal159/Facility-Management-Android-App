@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using Newtonsoft.Json.Converters;
 using System.Threading.Tasks;
 
 namespace Facility_Management_App.ViewModel
@@ -50,8 +51,8 @@ namespace Facility_Management_App.ViewModel
                 if (Tasks.Count != 0)
                     Tasks.Clear();
 
-                foreach (var task in tasks)
-                    tasks.Add(task);
+                //foreach (var task in tasks)
+                //    tasks.Add(task);
 
             }
             catch (Exception ex)

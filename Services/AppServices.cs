@@ -1,4 +1,5 @@
 ﻿using Facility_Management_App.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,26 +20,28 @@ namespace Facility_Management_App.Services
         public AppServices()
         {
             this.Client = new HttpClient();
-            
         }
         public async Task<List<AppUser>> GetAppUsers()
         {
-            if (Users?.Count > 0)
-                return Users;
-            var response = await Client.GetAsync("Write the http verb's url here");
-            if (response.IsSuccessStatusCode)
-            {
-                Users = await response.Content.ReadFromJsonAsync<List<AppUser>>();
-            }
+            //if (Users?.Count > 0)
+            //
+            Client.DefaultRequestHeaders.Accept.Add(new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue ("application/json"));
+            var ResponseMessage = await Client.GetAsync("http://41.43.116.139:5050/Account/MobileUsers");
+            if (ResponseMessage.IsSuccessStatusCode) return null;
+            var jasonResult=await ResponseMessage.Content.ReadAsStringAsync().ConfigureAwait(false);
+            var Users = JsonConvert.DeserializeObject<IEnumerable<AppUser>>(jasonResult);
+            return Users.ToList();
+            //if (response.IsSuccessStatusCode)
+            //{
+            //    Users = await response.Content.ReadFromJsonAsync<List<AppUser>>();
+            //    return Users;
+            //}
             //lets me login and use app offline
             //using var stream = await FileSystem.OpenAppPackageFileAsync("UserData.json");
             //using var reader = new StreamReader(stream);
             //var contents = await reader.ReadToEndAsync();
             //Users = JsonSerializer.Deserialize<List<AppUser>>(contents);
-            return Users;
+            //return Users;
         }
-
-      
-
     }
 }

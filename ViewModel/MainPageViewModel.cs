@@ -12,6 +12,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Task = System.Threading.Tasks.Task;
 using Newtonsoft.Json;
+//using Android.Widget;
+using Microsoft.Data.SqlClient;
 
 namespace Facility_Management_App.ViewModel
 {
@@ -28,38 +30,39 @@ namespace Facility_Management_App.ViewModel
         }
         [ObservableProperty]
         bool isRefreshing;
-        [ICommand]
-        async Task GetAppUsersAsync()
-        {
-            if (IsBusy)
-                return;
-            try
-            {
-                if (connectivity.NetworkAccess != NetworkAccess.Internet)
-                {
-                    await Shell.Current.DisplayAlert("No connectivity!",
-                        $"Please check internet and try again.", "OK");
-                    return;
-                }
-                IsBusy = true;
-                var users=await appServices.GetAppUsers();
-             if(users.Count != 0)
-                    users.Clear();
-             foreach(var user in users)
-                    users.Add(user);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex);
-                await Shell.Current.DisplayAlert("Error",$"unable to reach users{ex.Message}","ok");
-                 
-            }
-            finally
-            {
-                IsBusy = false;
-                IsRefreshing = false;
-            }
-        }
+        //[ICommand]
+        //async Task GetAppUsersAsync()
+        //{
+        //    if (IsBusy)
+        //        return;
+        //    try
+        //    {
+        //        if (connectivity.NetworkAccess != NetworkAccess.Internet)
+        //        {
+        //            await Shell.Current.DisplayAlert("No connectivity!",
+        //                $"Please check internet and try again.", "OK");
+        //            return;
+        //        }
+        //        IsBusy = true;
+        //        var users=await appServices.GetAppUsers();
+        //     if(users.Count != 0)
+        //            users.Clear();
+        //     foreach(var user in users)
+        //            users.Add(user);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Debug.WriteLine(ex);
+        //        await Shell.Current.DisplayAlert("Error",$"unable to reach users{ex.Message}","ok");
+        //    }
+        //    finally
+        //    {
+        //        IsBusy = false;
+        //        IsRefreshing = false;
+        //    }
+        //}
+
+        //these properties will receive the values fron the View 
         [ObservableProperty]
         private string username;
 
@@ -72,7 +75,6 @@ namespace Facility_Management_App.ViewModel
         {
             if (IsBusy)
                 return;
-
             try
             {
                 if (connectivity.NetworkAccess != NetworkAccess.Internet)
@@ -81,20 +83,22 @@ namespace Facility_Management_App.ViewModel
                         $"Please check internet and try again.", "OK");
                     return;
                 }
+                List<AppUser> AppUserss = new();
+                //if (!IsBusy)
+                //{
+                //    AppUserss = await appServices.GetAppUsers();
+                //}
 
-                IsBusy = true;
-                var AppUserss = await appServices.GetAppUsers();
+                //if (appUsers.Count != 0)
+                //    appUsers.Clear();
 
-                if (appUsers.Count != 0)
-                    appUsers.Clear();
+                //foreach (var appUser in AppUserss)
+                //    AppUserss.Add(appUser);
+                //if (Username == AppUserss.FirstOrDefault().UserName && (Password == AppUserss.FirstOrDefault().PassWord))
+                //{
+                await Shell.Current.GoToAsync($"//{nameof(TaskList)}");
 
-                foreach (var appUser in AppUserss)
-                    AppUserss.Add(appUser);
-                if (Username == AppUserss.FirstOrDefault().UserName && (Password == AppUserss.FirstOrDefault().PassWord))
-                {
-                    await Shell.Current.GoToAsync($"//{nameof(TaskList)}");
-
-                }
+                //}
             }
             catch (Exception ex)
             {

@@ -16,8 +16,8 @@ namespace Facility_Management_App.Models
         public string Description { get; set; }
         public TaskStatus Status { get; set; }
         public Priority Priority { get; set; }
-        public double Cost { get; set; }
-        public DateTime FixingTime { get; set; }
+        public double? Cost { get; set; }
+        public DateTime? FixingTime { get; set; }
         #endregion
 
         #region Link with other
