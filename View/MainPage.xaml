@@ -5,21 +5,14 @@
              xmlns:viewmodel="clr-namespace:Facility_Management_App.ViewModel"
              Title="Login"
              x:DataType="viewmodel:MainPageViewModel"
-             BackgroundImageSource="BackGround.png">
+             BackgroundImageSource="back_ground.png">
     <Grid FlyoutItem.IsVisible="False">
 
         <StackLayout Margin="20">
             <Image  Source="logo.png" HeightRequest="100"  HorizontalOptions="Fill"  Aspect="AspectFill"/>
 
-            <StackLayout>
-                <Label Style="{StaticResource LargeLabel}" FontSize="32" Text="Welcome to ITI"/>
-                <Label Style="{StaticResource LargeLabel}" FontSize="28" Text="Facility Management Client App"/>
-                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}" 
-                       FontSize="16" Text="Please Sign in"/>
-            </StackLayout>
-
             <StackLayout  >
-                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}" FontSize="16" Text="Username" Grid.Column="0" Grid.Row="2"/>
+                <Label FontFamily="OpenSansRegular" TextColor="White"  FontSize="16" Text="Username" Grid.Column="0" Grid.Row="2"/>
                 <!--<Image Source="user.png" HeightRequest="20" WidthRequest="20" Grid.Column="1" Grid.Row="2"  />-->
                 
                 <Entry  BackgroundColor="White"  Placeholder="Enter username"
@@ -27,11 +20,11 @@
                            PlaceholderColor="Gray" Keyboard="Text" Visual="Default" IsVisible="true" />
             </StackLayout>
             <StackLayout  >
-                <Label FontFamily="OpenSansRegular" TextColor="{StaticResource SecondaryColor}" 
+                <Label FontFamily="OpenSansRegular" TextColor="White"  
                            FontSize="16" Text="Password"/>
 
                 <!--<Image Source="lock.png" HeightRequest="20" WidthRequest="20" Grid.Column="1" Grid.Row="3"  />-->
-                <Entry BackgroundColor="White" Placeholder="Enter password" 
+                <Entry BackgroundColor="White" Placeholder="Enter ID" 
                                TextColor="Black" Margin="5,0"
                                PlaceholderColor="Gray" Text="{Binding Password}" IsPassword="True"
                                 Keyboard="Text" Visual="Default" IsVisible="true"/>

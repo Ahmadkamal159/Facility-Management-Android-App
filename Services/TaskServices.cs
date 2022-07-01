@@ -28,8 +28,6 @@ namespace Facility_Management_App.Services
             
             if (response.IsSuccessStatusCode)
             {
-                //var x = await response.Content.ReadFromJsonAsync<List<Task>>();//reads the return fro the servers and translates it to the punch of ur tasks
-                //Tasks = x;
                 Tasks = JsonConvert.DeserializeObject<List<Task>>(await response.Content.ReadAsStringAsync());
             }
             //use this punch of code when ur offline

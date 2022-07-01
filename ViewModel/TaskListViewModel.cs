@@ -52,7 +52,7 @@ namespace Facility_Management_App.ViewModel
                     Tasks.Clear();
 
                 //foreach (var task in tasks)
-                //    tasks.Add(task);
+                //    Tasks.Add(task);
 
             }
             catch (Exception ex)
