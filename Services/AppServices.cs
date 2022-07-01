@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-﻿using Facility_Management_App.Models;
+
 using Newtonsoft.Json;
-=======
 ﻿using Facility_Management_APP.Model;
->>>>>>> 2d393b7f8297d548c24599827089e5a9f8170f3f
 using System;
 using System.Collections.Generic;
 using System.Linq;

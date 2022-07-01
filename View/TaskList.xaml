@@ -52,12 +52,12 @@
             Style="{StaticResource ButtonOutline}"
             Text="Get Tasks"/>
 
-        <!--<ActivityIndicator
+        <ActivityIndicator
             Grid.RowSpan="2"
             Grid.ColumnSpan="2"
             HorizontalOptions="FillAndExpand"
             IsRunning="{Binding IsBusy}"
             IsVisible="{Binding IsBusy}"
-            VerticalOptions="CenterAndExpand" />-->
+            VerticalOptions="CenterAndExpand" />
     </Grid>
 </ContentPage>

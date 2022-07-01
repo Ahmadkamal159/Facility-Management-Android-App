@@ -17,11 +17,7 @@ namespace Facility_Management_APP.Model
         public Priority Priority { get; set; }
         public double? Cost { get; set; }
         public DateTime? FixingTime { get; set; }
-<<<<<<< HEAD
-=======
         public string Comment { get; set; }
-
->>>>>>> 2d393b7f8297d548c24599827089e5a9f8170f3f
         #endregion
 
         #region Link with other

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 using Task = System.Threading.Tasks.Task;
 using Newtonsoft.Json;
 //using Android.Widget;
-using Microsoft.Data.SqlClient;
+//using Microsoft.Data.SqlClient;
 
 namespace Facility_Management_App.ViewModel
 {
@@ -54,10 +54,6 @@ namespace Facility_Management_App.ViewModel
         //    {
         //        Debug.WriteLine(ex);
         //        await Shell.Current.DisplayAlert("Error",$"unable to reach users{ex.Message}","ok");
-<<<<<<< HEAD
-=======
-                 
->>>>>>> 2d393b7f8297d548c24599827089e5a9f8170f3f
         //    }
         //    finally
         //    {
@@ -65,11 +61,8 @@ namespace Facility_Management_App.ViewModel
         //        IsRefreshing = false;
         //    }
         //}
-<<<<<<< HEAD
-
         //these properties will receive the values fron the View 
-=======
->>>>>>> 2d393b7f8297d548c24599827089e5a9f8170f3f
+
         [ObservableProperty]
         private string username;
 
@@ -82,7 +75,6 @@ namespace Facility_Management_App.ViewModel
         {
             if (IsBusy)
                 return;
-<<<<<<< HEAD
             try
             {
                 if (connectivity.NetworkAccess != NetworkAccess.Internet)
@@ -118,42 +110,7 @@ namespace Facility_Management_App.ViewModel
                 IsBusy = false;
                 IsRefreshing = false;
             }
-=======
 
-            ////try
-            ////{
-            ////    if (connectivity.NetworkAccess != NetworkAccess.Internet)
-            ////    {
-            ////        await Shell.Current.DisplayAlert("No connectivity!",
-            ////            $"Please check internet and try again.", "OK");
-            ////        return;
-            ////    }
-
-            ////    IsBusy = true;
-            ////    var AppUserss = await appServices.GetAppUsers();
-
-            ////    if (appUsers.Count != 0)
-            ////        appUsers.Clear();
-
-            ////    foreach (var appUser in AppUserss)
-            ////        AppUserss.Add(appUser);
-            ////    if (Username == AppUserss.FirstOrDefault().UserName && (Password == AppUserss.FirstOrDefault().PassWord))
-            ////    {
-                    await Shell.Current.GoToAsync($"//{nameof(TaskList)}");
-
-            ////    }
-            ////}
-            ////catch (Exception ex)
-            ////{
-            ////    Debug.WriteLine($"Unable to LOGIN: {ex.Message}");
-            ////    await Shell.Current.DisplayAlert("Error Username or Password are wrong!", ex.Message, "OK");
-            ////}
-            ////finally
-            ////{
-            ////    IsBusy = false;
-            ////    IsRefreshing = false;
-            ////}
->>>>>>> 2d393b7f8297d548c24599827089e5a9f8170f3f
             //if (!string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(Password))
             //{
             //    var userDetails = new AppUser();
