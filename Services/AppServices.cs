@@ -24,7 +24,7 @@ namespace Facility_Management_App.Services
         {
             if (Users?.Count > 0)
                 return Users;
-            var response = await Client.GetAsync("Write the http verb's url here");
+            var response = await Client.GetAsync("http://41.43.116.139:5050/Account/LoginTomobApp1");
             if (response.IsSuccessStatusCode)
             {
                 Users = await response.Content.ReadFromJsonAsync<List<AppUser>>();

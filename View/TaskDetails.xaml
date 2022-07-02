@@ -4,17 +4,13 @@
             x:Class="Facility_Management_App.View.TaskDetails"
             xmlns:viewmodel="clr-namespace:Facility_Management_App.ViewModel"
             Title="{Binding Task.Id,StringFormat='TaskId: {0}'}"
-            x:DataType="viewmodel:TaskDetailsViewModel">
+            x:DataType="viewmodel:TaskDetailsViewModel"
+            BackgroundImageSource="back_ground2.png"
+            >
     <ScrollView>
         <VerticalStackLayout>
             <Grid ColumnDefinitions="*,Auto,*" RowDefinitions="160, Auto">
-                <BoxView
-                        Grid.ColumnSpan="3"
-                        Background="Black"
-                        HeightRequest="160"
-                        HorizontalOptions="FillAndExpand" />
                 <Frame
-                    
                         Grid.RowSpan="2"
                         Grid.Column="1"
                         Margin="0,80,0,0"
@@ -24,7 +20,7 @@
                         Padding="0"
                         IsClippedToBounds="True"
                         CornerRadius="80">
-                    <Image Source="index.jpg"
+                    <Image Source="task_icon.png"
                         Aspect="AspectFill"
                         HeightRequest="160"
                         HorizontalOptions="Center"
@@ -32,19 +28,19 @@
                 </Frame>
             </Grid>
             <VerticalStackLayout Padding="10" Spacing="10">
-                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.Id,StringFormat='TaskId:{0}'}" />
-                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.CreatedById,StringFormat='CreatedById: {0}'}" />
-                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.AssignedById, StringFormat='AssignedById: {0}'}" />
-                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.AssignedBy.FirstName , StringFormat='AssignedByName: {0}'}" />
-                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.AssignedToId, StringFormat='AssignedToId: {0}'}" />
-                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.AssignedTo.FirstName, StringFormat='AssignedToName: {0}'}" />
-                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.Description, StringFormat='Description: {0}'}" />
-                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.Cost,StringFormat='Cost: {0}'}" />
-                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.FixingTime, StringFormat='FixingTime: {0}'}" />
-                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.IncidentId, StringFormat='IncidentId: {0}'}" />
-                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.Priority, StringFormat='Priority: {0}'}" />
-                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.Status, StringFormat='Status: {0}'}" />
-                <Label Style="{StaticResource LargeLabel}" Text="{Binding Task.Type, StringFormat='Type: {0}'}" />
+                <!--<Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.Id,StringFormat='TaskId: {0}'}" />-->
+                <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.CreatedById,StringFormat='Created By Id: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.AssignedById, StringFormat='Assigned By Id: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.AssignedBy.FirstName , StringFormat='Assigned By: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.AssignedToId, StringFormat='Assigned To Id: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.AssignedTo.FirstName, StringFormat='Assigned To: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.Description, StringFormat='Description: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.Cost,StringFormat='Cost: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.FixingTime, StringFormat='Fixing Time: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.IncidentId, StringFormat='Incident Id: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.Priority, StringFormat='Priority: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.Status, StringFormat='Status: {0}'}" />
+                <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.Type, StringFormat='Type: {0}'}" />
             </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>

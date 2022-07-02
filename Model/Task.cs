@@ -18,7 +18,6 @@ namespace Facility_Management_APP.Model
         public double? Cost { get; set; }
         public DateTime? FixingTime { get; set; }
         public string Comment { get; set; }
-
         #endregion
 
         #region Link with other
@@ -32,8 +31,6 @@ namespace Facility_Management_APP.Model
         public AppUser AssignedTo { get; set; }
         public int? AssignedById { get; set; }//new//need to be tested in api to make sure it add in the list
         public AppUser AssignedBy { get; set; }
-
-       
         #endregion
     }
 }

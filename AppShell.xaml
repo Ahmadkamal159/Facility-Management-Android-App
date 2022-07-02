@@ -6,7 +6,6 @@
     xmlns:local="clr-namespace:Facility_Management_App"
     xmlns:y="clr-namespace:Facility_Management_App.View"
     xmlns:z="clr-namespace:Facility_Management_App.View"
-    
     Shell.FlyoutBehavior="Disabled">
 
     <Shell.Resources>
