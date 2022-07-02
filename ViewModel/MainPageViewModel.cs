@@ -41,7 +41,6 @@ namespace Facility_Management_App.ViewModel
         {
             if (IsBusy)
                 return;
-
             try
             {
                 if (connectivity.NetworkAccess != NetworkAccess.Internet)
@@ -77,6 +76,7 @@ namespace Facility_Management_App.ViewModel
                 IsBusy = false;
                 IsRefreshing = false;
             }
+
             //if (!string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(Password))
             //{
             //    var userDetails = new AppUser();
