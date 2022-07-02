@@ -9,7 +9,22 @@
     <Grid FlyoutItem.IsVisible="False">
 
         <StackLayout Margin="20">
-            <Image  Source="logo.png" HeightRequest="100"  HorizontalOptions="Fill"  Aspect="AspectFill"/>
+            <Frame
+                        Grid.RowSpan="2"
+                        Grid.Column="1"
+                        Margin="0,80,0,0"
+                        HeightRequest="100"
+                        HorizontalOptions="Center" 
+                        Padding="0"
+                        IsClippedToBounds="True"
+                        CornerRadius="83">
+                <Image Source="logo.png"
+                        Aspect="AspectFill"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="FillAndExpand"
+                         />
+            </Frame>
+            <!--<Image  Source="logo.png" HeightRequest="100"  HorizontalOptions="Fill"  Aspect="AspectFill"/>-->
 
             <StackLayout  >
                 <Label FontFamily="OpenSansRegular" TextColor="White"  FontSize="16" Text="Username" Grid.Column="0" Grid.Row="2"/>
@@ -21,12 +36,12 @@
             </StackLayout>
             <StackLayout  >
                 <Label FontFamily="OpenSansRegular" TextColor="White"  
-                           FontSize="16" Text="Password"/>
+                           FontSize="16" Text="ID"/>
 
                 <!--<Image Source="lock.png" HeightRequest="20" WidthRequest="20" Grid.Column="1" Grid.Row="3"  />-->
                 <Entry BackgroundColor="White" Placeholder="Enter ID" 
                                TextColor="Black" Margin="5,0"
-                               PlaceholderColor="Gray" Text="{Binding Password}" IsPassword="True"
+                               PlaceholderColor="Gray" Text="{Binding Userid}" IsPassword="True"
                                 Keyboard="Text" Visual="Default" IsVisible="true"/>
             </StackLayout>
 
