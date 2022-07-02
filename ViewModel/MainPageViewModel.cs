@@ -42,41 +42,41 @@ namespace Facility_Management_App.ViewModel
             if (IsBusy)
                 return;
 
-            try
-            {
-                if (connectivity.NetworkAccess != NetworkAccess.Internet)
-                {
-                    await Shell.Current.DisplayAlert("No connectivity!",
-                        $"Please check internet and try again.", "OK");
-                    return;
-                }
+            //try
+            //{
+            //    if (connectivity.NetworkAccess != NetworkAccess.Internet)
+            //    {
+            //        await Shell.Current.DisplayAlert("No connectivity!",
+            //            $"Please check internet and try again.", "OK");
+            //        return;
+            //    }
 
-                IsBusy = true;
-                var AppUserss = await appServices.GetAppUsers();
-                //foreach (var appUser in AppUserss)
-                //    appUsers.Add(appUser);
-                var loggedUser = AppUserss.FirstOrDefault(user=>user.Id== userid);
-                UserId.LoginId=loggedUser.Id;
-                appUsers.Add(loggedUser);
+            //    IsBusy = true;
+            //    var AppUserss = await appServices.GetAppUsers();
+            //    //foreach (var appUser in AppUserss)
+            //    //    appUsers.Add(appUser);
+            //    var loggedUser = AppUserss.FirstOrDefault(user=>user.Id== userid);
+            //    UserId.LoginId=loggedUser.Id;
+            //    appUsers.Add(loggedUser);
 
-                if (appUsers.Count != 0)
-                    appUsers.Clear();
-                if (userid == loggedUser.Id)
-                {
+            //    if (appUsers.Count != 0)
+            //        appUsers.Clear();
+            //    if (userid == loggedUser.Id)
+            //    {
 
-                    await Shell.Current.GoToAsync($"//{nameof(TaskList)}");
-                }
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Unable to LOGIN: {ex.Message}");
-                await Shell.Current.DisplayAlert("Error Username or Password are wrong!", ex.Message, "OK");
-            }
-            finally
-            {
-                IsBusy = false;
-                IsRefreshing = false;
-            }
+            await Shell.Current.GoToAsync($"//{nameof(TaskList)}");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Debug.WriteLine($"Unable to LOGIN: {ex.Message}");
+            //    await Shell.Current.DisplayAlert("Error Username or Password are wrong!", ex.Message, "OK");
+            //}
+            //finally
+            //{
+            //    IsBusy = false;
+            //    IsRefreshing = false;
+            //}
             //if (!string.IsNullOrWhiteSpace(Username) && !string.IsNullOrWhiteSpace(Password))
             //{
             //    var userDetails = new AppUser();
