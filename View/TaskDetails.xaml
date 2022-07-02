@@ -32,6 +32,7 @@
                 <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.CreatedById,StringFormat='Created By Id: {0}'}" />
                 <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.AssignedById, StringFormat='Assigned By Id: {0}'}" />
                 <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.AssignedToId, StringFormat='Assigned To Id: {0}'}" />
+
                 <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.Description, StringFormat='Description: {0}'}" />
                 <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.Cost,StringFormat='Cost: {0}'}" />
                 <Label Style="{StaticResource LargeLabel}" TextColor="White" Text="{Binding Task.FixingTime, StringFormat='Fixing Time: {0}'}" />
