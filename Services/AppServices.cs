@@ -36,8 +36,5 @@ namespace Facility_Management_App.Services
             //Users = JsonSerializer.Deserialize<List<AppUser>>(contents);
             return Users;
         }
-
-      
-
     }
 }

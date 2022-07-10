@@ -30,10 +30,15 @@ namespace Facility_Management_App.Services
             var response = await Client.GetAsync("http://41.43.116.139:5050/taskpages/senttaskstomobapp1"); //returns u the response of the server's verb
             if (response.IsSuccessStatusCode)
             {
+<<<<<<< HEAD
+                var TheTasks = await response.Content.ReadFromJsonAsync<List<Task>>();//reads the return from the servers and translates it to the punch of ur tasks
+                 Tasks = TheTasks.Where(task => task.AssignedToId == UserId.LoginId).ToList();
+=======
 
                 Tasks = await response.Content.ReadFromJsonAsync<List<Task>>();//reads the return from the servers and translates it to the punch of ur tasks
                  //Tasks = TheTasks.Where(task => task.AssignedToId == UserId.LoginId).ToList();
 
+>>>>>>> 35c5ef3d81e89f6d276bbd713d20c4b52c24491e
                 //////////////////var result = await response.Content.ReadAsStringAsync();
                 ////////////////// var mylist = JsonConvert.DeserializeObject<List<Task>>(result);
                 ////////////////// Tasks = mylist;
